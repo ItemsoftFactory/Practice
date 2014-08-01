@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+		<style>
+		.container
+		{
+			width: 50%;
+			margin-top: 20px;
+		}
+
+		form .input-group
+		{
+			width: 100%;
+			margin: 0 0 10px 0
+		}
+		
+		.row-table
+		{
+			width: 900px;
+			margin:0 auto 0 auto;
+		}
+
+		table tr th
+		{
+			width: 25%;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<form action="" method="post">
+					<div class="form-group">
+						<div class="input-group"><label for="nombre">Nombre: </label><input type="text" class="form-control" name="nombre" required></div>
+						<div class="input-group"><label for="email">Email: </label><input type="text" class="form-control" name="email" required></div>
+						<div class="input-group"><label for="edad">Edad: </label><input type="text" class="form-control" name="edad" required></div>
+						<div class="input-group"><label for="ciudad">Ciudad: </label><input type="text" class="form-control" name="ciudad" required></div>
+						<input type="submit" value="Registrar" class="btn btn-primary">
+					</div>
+				</form>
+			</div>			
+		</div>
+		<div class="row row-table ">
+			<table class="table table-condensed table-bordered">
+				<tr>
+					<th>Nombre</th>
+					<th>Email</th>
+					<th>Edad</th>
+						<th>Ciudad</th>
+				</tr>
+				{% for user in users %}
+				<tr>
+					<td>{{user.name}}</td>
+					<td>{{user.email}}</td>
+					<td>{{user.age}}</td>
+					<td>{{user.city}}</td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</body>
+</html>
+
